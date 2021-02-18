@@ -34,6 +34,14 @@ def bubblesort(nums):
             if nums[j] > nums[j+1] : 
                 nums[j], nums[j+1] = nums[j+1], nums[j] 
 
+def selectionsort(nums):
+    for i in range(len(nums) - 1):
+        min_index = i
+        for j in range(i+1, len(nums)-1):
+            if nums[j] < nums[min_index]:
+                min_index = j
+        nums[i], nums[min_index] = nums[min_index], nums[i]
+
 def printList(lis):
     for i in range(len(lis)):
         print(lis[i], end=" ")
@@ -47,5 +55,5 @@ def listrandom(lislen):
 
 arr = listrandom(10)
 printList(arr)
-bubblesort(arr)
+selectionsort(arr)
 printList(arr)
