@@ -1,4 +1,5 @@
 import random
+from time import time
 
 def mergesort(nums):
     if len(nums) > 1:
@@ -53,7 +54,21 @@ def listrandom(lislen):
         nums[i] = random.randint(0,1000)
     return nums
 
-arr = listrandom(10)
-printList(arr)
+
+
+arr = listrandom(1000)
+
+start_time = time()
+mergesort(arr)
+elapsed_time = time() - start_time
+print("Merge sort: %.10f seconds." % elapsed_time)
+
+start_time = time()
+bubblesort(arr)
+elapsed_time = time() - start_time
+print("Bubble sort: %.10f seconds." % elapsed_time)
+
+start_time = time()
 selectionsort(arr)
-printList(arr)
+elapsed_time = time() - start_time
+print("Selection sort: %.10f seconds." % elapsed_time)
